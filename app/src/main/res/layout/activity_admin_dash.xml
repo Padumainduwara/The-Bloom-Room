@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    tools:context=".Activities.User.HomePage">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp">
+
+        <ImageView
+            android:id="@+id/ic_back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back_arrow" />
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginTop="32dp"
+        android:text="The Bloom \nRoom"
+        android:textSize="28dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ic_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:src="@drawable/ic_add"
+        app:rippleColor="@color/selected" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/chip_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="28dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/chips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnFlower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/selected"
+                android:text="Flowers"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/btnFlower"
+                android:backgroundTint="@color/not_selected"
+                android:text="Categories"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/flower_list_rec_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chip_scroll_view"
+        android:layout_marginTop="24dp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cat_list_rec_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chip_scroll_view"
+        android:layout_marginTop="24dp" />
+
+
+
+</RelativeLayout>
+
